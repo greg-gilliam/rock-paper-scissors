@@ -1,6 +1,6 @@
 // IMPORT MODULES under test here:
 // import { example } from '../example.ts';
-import { didUserWin } from '../utils';
+import { didUserWin } from '../utils.js';
 const test = QUnit.test;
 
 test('testing user win', (expect) => {
@@ -16,7 +16,12 @@ test('testing user win', (expect) => {
     expect.equal(actual, expected);
 });
 test('rock vs paper', (expect) => {
-    const expected = 'You Lose!';
+    const expected = 'you lose!';
     const actual = didUserWin('rock', 'paper');
-    expect.equal(expected, actual);
+    expect.equal(actual, expected);
 });
+test('paper vs paper', (expect) => {
+    const expected = 'draw!';
+    const actual = didUserWin('paper', 'paper');
+    expect.equal(actual, expected); 
+}); 
